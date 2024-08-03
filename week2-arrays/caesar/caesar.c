@@ -11,7 +11,7 @@ int main(int argc, string argv[])
 {
     if (argc != 2 || !is_number(argv[1]))
     {
-        printf("usage: ./caesar key\n");
+        printf("Usage: ./caesar key\n");
         return 1;
     }
     
