@@ -4,14 +4,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char encrypt(char symbol, int k);
+char encrypt(char c, int k);
 bool is_number(string s);
 
 int main(int argc, string argv[])
 {
     if (argc != 2 || !is_number(argv[1]))
     {
-        printf("usage: ./caesar key\n");
+        printf("Usage: ./caesar key\n");
         return 1;
     }
     
@@ -27,15 +27,15 @@ int main(int argc, string argv[])
     return 0;
 }
 
-char encrypt(char symbol, int k)
+char encrypt(char c, int k)
 {
-    if (!isalpha(symbol))
+    if (!isalpha(c))
     {
-        return symbol;
+        return c;
     }
-    char letter_index = tolower(symbol) - 'a';
+    char letter_index = tolower(c) - 'a';
     int offset = (letter_index + k) % 26 - letter_index;
-    return symbol + offset;
+    return c + offset;
 }
 
 bool is_number(string s)
